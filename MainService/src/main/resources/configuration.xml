@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	              http://www.springframework.org/schema/beans/spring-beans.xsd
+	              http://www.springframework.org/schema/aop
+	              http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	              http://www.springframework.org/schema/data/jpa
+	              http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+	              http://www.springframework.org/schema/tx
+	              http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	              http://www.springframework.org/schema/context
+	              http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+        <property name="driverClassName" value="${spring.datasource.driver-class-name}" />
+        <property name="url" value="${spring.datasource.url}" />
+        <property name="username" value="${spring.datasource.username}"/>
+        <property name="password" value="${spring.datasource.password}"/>
+    </bean>
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <!--<bean id="jdbcUserDAO" class="com.example.demo.model.JdbcUserDAO">-->
+        <!--<constructor-arg name="jdbcTemplate" ref="jdbcTemplate"/>-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+    <!--</bean>-->
+
+    <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+
+    </bean>
+</beans>
