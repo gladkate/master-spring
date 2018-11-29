@@ -1,0 +1,47 @@
+.dropdown-menu2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.test{
+    background-color: pink;
+    font-size: 125px;
+}
+
+.h1{
+    color: blue;
+}
+
+.navbar-inverse{
+    background-color: #5a7ec0;
+}
+
+.navbar-inverse .navbar-brand{
+    color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color: black;
+}
+
+.btn-success{
+    background-color: #5a7ec0;
+    border-color: #5a7ec0;
+}

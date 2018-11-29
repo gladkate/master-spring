@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Offer list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+
+        <h2>Offers List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Title</th>
+                <th>Department</th>
+                <th>Message</th>
+                <th>List</th>
+            </tr>
+            <tr th:each="offer : ${offers}">
+                <!--<td th:text="${offer.id}"></td>-->
+                <td th:text="${offer.title}"></td>
+                <td th:text="${offer.department}"></td>
+                <td th:text="${offer.message}"></td>
+                <td><a th:href="${'/offer/show/' + offer.id}">View</a> </td>
+            </tr>
+        </table>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/addOffer">New Offer</a>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
